@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Moran-catering/static/css/main.6fb411ba.css",
-    "main.js": "/Moran-catering/static/js/main.f75c56f9.js",
+    "main.js": "/Moran-catering/static/js/main.d6d4e51a.js",
     "index.html": "/Moran-catering/index.html",
     "main.6fb411ba.css.map": "/Moran-catering/static/css/main.6fb411ba.css.map",
-    "main.f75c56f9.js.map": "/Moran-catering/static/js/main.f75c56f9.js.map"
+    "main.d6d4e51a.js.map": "/Moran-catering/static/js/main.d6d4e51a.js.map"
   },
   "entrypoints": [
     "static/css/main.6fb411ba.css",
-    "static/js/main.f75c56f9.js"
+    "static/js/main.d6d4e51a.js"
   ]
 }
