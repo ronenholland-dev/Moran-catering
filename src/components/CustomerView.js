@@ -1,12 +1,38 @@
 import React, { useState } from 'react';
 
-const CATEGORIES = ['הכל', 'סלטים', 'קישים'];
+// סדר הקטגוריות כאשר מוצגות כל המנות יחד (טאב "הכל")
+const CATEGORY_ORDER = [
+  'סלטים',
+  'כריכים',
+  'חמים וטעים',
+  'פסטות',
+  'עוף ובשר',
+  'ממולאים',
+  'מרקים',
+  'תוספות',
+  'עוגות/קינוחים',
+  'מגשים'
+];
+
+const CATEGORIES = ['הכל', ...CATEGORY_ORDER];
+
+function sortByCategoryOrder(items) {
+  return [...items].sort((a, b) => {
+    const aIndex = CATEGORY_ORDER.indexOf(a.category);
+    const bIndex = CATEGORY_ORDER.indexOf(b.category);
+    const aOrder = aIndex === -1 ? CATEGORY_ORDER.length : aIndex;
+    const bOrder = bIndex === -1 ? CATEGORY_ORDER.length : bIndex;
+    return aOrder - bOrder;
+  });
+}
 
 export default function CustomerView({ menu, addToCart }) {
   const [activeCategory, setActiveCategory] = useState('הכל');
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const filtered = activeCategory === 'הכל' ? menu : menu.filter(i => i.category === activeCategory);
+  const filtered = activeCategory === 'הכל'
+    ? sortByCategoryOrder(menu)
+    : menu.filter(i => i.category === activeCategory);
 
   return (
     <div style={{ padding: '0 0 100px' }}>
