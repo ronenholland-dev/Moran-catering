@@ -145,9 +145,16 @@ function Header({ view, setView, cartCount, onCartClick }) {
       alignItems: 'center',
       justifyContent: 'space-between'
     }}>
-      <div>
-        <h1 style={{ fontSize: 20, fontWeight: 700, color: '#2d6a4f' }}>🥗 מורן קייטרינג</h1>
-        <p style={{ fontSize: 12, color: '#888', marginTop: 2 }}>אוכל טעים ובריא</p>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <img
+          src={process.env.PUBLIC_URL + '/images/chef-logo.jpeg'}
+          alt="מורן COOKING"
+          style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+        />
+        <div>
+          <h1 style={{ fontSize: 20, fontWeight: 700, color: '#2d6a4f' }}>מורן COOKING</h1>
+          <p style={{ fontSize: 12, color: '#888', marginTop: 2 }}>אוכל טעים ובריא</p>
+        </div>
       </div>
       <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
         {view === 'customer' && (
